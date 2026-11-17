@@ -1,0 +1,272 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0B0B0D;
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.coursecraft {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px 60px;
+}
+
+/* TOP NAVIGATION */
+.topbar {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #3A3A42;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: white;
+  background: #E84A27;
+  border-radius: 10px;
+}
+
+.term-label {
+  color: #B8BBC5;
+  font-size: 14px;
+}
+
+/* PAGE HEADING */
+.page-heading {
+  padding: 48px 0 28px;
+}
+
+.eyebrow {
+  color: #E84A27;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 38px;
+  color: #FFFFFF;
+}
+
+.subtitle {
+  color: #B8BBC5;
+  font-size: 16px;
+}
+
+/* SEARCH SECTION */
+.search-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.search-section input,
+.search-section select {
+  height: 48px;
+  padding: 0 15px;
+  color: #FFFFFF;
+  background: #17171C;
+  border: 1px solid #555966;
+  border-radius: 9px;
+  outline: none;
+}
+
+.search-section input {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-section input::placeholder {
+  color: #9297A5;
+}
+
+.search-section input:focus,
+.search-section select:focus {
+  border-color: #E84A27;
+  box-shadow: 0 0 0 2px rgba(232, 74, 39, 0.2);
+}
+
+.search-section select {
+  min-width: 190px;
+}
+
+.search-section select option {
+  background: #17171C;
+  color: #FFFFFF;
+}
+
+/* RESULTS HEADING */
+.results-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.results-heading h2 {
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.results-heading span {
+  color: #B8BBC5;
+  font-size: 14px;
+}
+
+/* COURSE GRID */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* COURSE CARDS */
+.course-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 230px;
+  padding: 20px;
+  background: #17171C;
+  border: 1px solid #41434D;
+  border-radius: 12px;
+  transition: border-color 0.2s ease,
+              transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+  border-color: #E84A27;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(232, 74, 39, 0.12);
+}
+
+.course-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.course-code {
+  color: #FF6848;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.credit-hours {
+  color: #B8BBC5;
+  font-size: 12px;
+}
+
+.course-card h3 {
+  margin: 16px 0 8px;
+  font-size: 17px;
+  color: #FFFFFF;
+}
+
+.course-description {
+  flex: 1;
+  color: #B8BBC5;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* DETAILS BUTTON */
+.details-button {
+  align-self: flex-start;
+  padding: 9px 13px;
+  color: #FFFFFF;
+  background: #E84A27;
+  border: 1px solid #E84A27;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.details-button:hover {
+  background: #C63A1E;
+  border-color: #C63A1E;
+}
+
+/* STATUS MESSAGES */
+.status-message {
+  padding: 30px;
+  color: #B8BBC5;
+  text-align: center;
+}
+
+.error-message {
+  padding: 20px;
+  color: #FF8C7A;
+  background: #291715;
+  border: 1px solid #A83C2A;
+  border-radius: 10px;
+}
+
+.error-message button {
+  padding: 8px 12px;
+  color: #FFFFFF;
+  background: #E84A27;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 850px) {
+  .course-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .coursecraft {
+    padding: 0 16px 40px;
+  }
+
+  .search-section {
+    flex-direction: column;
+  }
+
+  .search-section select {
+    width: 100%;
+  }
+
+  .search-section p {
+    color: #FFFFFF;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
